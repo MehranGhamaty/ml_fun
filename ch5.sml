@@ -58,7 +58,7 @@ fun cycle (0, l) = l
 cycle(2, [1,2,3,4,5]);
 
 (* exercise 12 *)
-(* Shelton says this can be faster*)
+(* we can make this faster *)
 fun pow (n, 1) = n
 |   pow (n, p) = n * pow(n, p-1);
 pow(2, 4);
