@@ -1,6 +1,18 @@
+(* Euclid's *)
+fun gcd (a, b) = 
+  let
+    fun reduce (a, 0) = a
+    |   reduce (0, b) = b
+    |   reduce (a, b) = if a = b then a else reduce (a-b, b)
+  in
+    if a > b then reduce(a, b) else reduce (b, a)
+  end;
 
-fun gcd (0, b) = b
-|   gcd (a, 0) = a
-|   gcd (a, b) = if a > b then gcd (a-b, b) else gcd (a, b-a);
+gcd(30,60);
+gcd(60,30);
 
-gcd(2, 6);
+fun lcd (0, b) = b
+|   lcd (a, 0) = a
+|   lcd (a, b) = if a > b then lcd (a-b, b) else lcd (a, b-a);
+
+lcd(2, 6);
